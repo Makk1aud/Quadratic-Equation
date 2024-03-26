@@ -16,6 +16,7 @@ namespace QuadraticEquation.Tests.Systems.QuadraticEquation
         public void Get_OnSuccess_QuadraticResult(double a, double b, double c, double expectedX1, double expectedX2)
         {
             var result = QuadraticSolver.Solve(a, b, c);
+
             result.Should().NotBeNull();
             result.Value.x1.Should().Be(expectedX1);
             result.Value.x2.Should().Be(expectedX2);
@@ -27,6 +28,7 @@ namespace QuadraticEquation.Tests.Systems.QuadraticEquation
         public void Get_OnSuccess_NullResult(double a, double b, double c)
         {
             var result = QuadraticSolver.Solve(a, b, c);
+
             result.Should().BeNull();
         }
     }

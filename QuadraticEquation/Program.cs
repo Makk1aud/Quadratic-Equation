@@ -18,6 +18,11 @@ internal class Program
         }
 
         var result = QuadraticSolver.Solve(parameters[0], parameters[1], parameters[2]);
+        if(result is null)
+        {
+            Console.WriteLine("Дискриминант отрицательный, корней нет");
+            return;
+        }
         Console.WriteLine($"x1:{result.Value.x1}");
         Console.WriteLine($"x2:{result.Value.x2}");
     }
